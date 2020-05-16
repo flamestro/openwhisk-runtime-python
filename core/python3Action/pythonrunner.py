@@ -91,6 +91,7 @@ class PythonRunner(ActionRunner):
             traceback.print_exc(file=sys.stderr)
 
         if result and isinstance(result, dict):
+            result["Verify"] = "It Works"
             return (200, result)
         else:
             return (502, {'error': 'The action did not return a dictionary.'})
